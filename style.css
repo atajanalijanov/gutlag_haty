@@ -1,3 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
@@ -45,17 +50,6 @@ p {
   z-index: 10;
 }
 
-.icon {
-  width: 50px;
-  height: 50px;
-  animation: float 3s ease-in-out infinite;
-  position: relative;
-}
-
-.icon1 { animation-delay: 0s; }
-.icon2 { animation-delay: 0.3s; }
-.icon3 { animation-delay: 0.6s; }
-
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
@@ -63,6 +57,25 @@ p {
 }
 
 /* Responsiwlik */
+@media (max-width: 300px) {
+  .card {
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .floating-icons {
+    gap: 10px;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}
+
 @media (max-width: 600px) {
   .card {
     padding: 20px;
@@ -71,11 +84,6 @@ p {
 
   h1 {
     font-size: 2em;
-  }
-
-  .icon {
-    width: 40px;
-    height: 40px;
   }
 
   .floating-icons {
@@ -97,10 +105,6 @@ p {
     font-size: 2.2em;
   }
 
-  .icon {
-    width: 45px;
-    height: 45px;
-  }
 
   .floating-icons {
     gap: 20px;
@@ -108,5 +112,24 @@ p {
 
   p {
     font-size: 1.1em;
+  }
+}
+.confetti {
+  position: absolute;        /* Sahypada erkin ýerleşmegi üçin */
+  width: 10px;               /* Giňligi */
+  height: 10px;              /* Balygy / beýikligi */
+  background: #FFD700;       /* Sary reňk (konfeti) */
+  top: -10px;                /* Sahypanyň başyndan başlanýar */
+  border-radius: 50%;        /* Döwür görnüşi */
+  animation: fall 3s linear infinite; /* Animasiýa */
+}
+
+/* Animasiýanyň açylyşy */
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg); /* Başlangyç pozisiýa */
+  }
+  100% {
+    transform: translateY(700px) rotate(360deg); /* Aşak 600px gaçýar we doly öwrülýär */
   }
 }
